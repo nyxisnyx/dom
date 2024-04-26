@@ -41,20 +41,16 @@ function createDiv(type,parent,content,className) {
     return newDiv;
 }
 
+learners.sort(() => 0.5 - Math.random());
 
 learners.forEach(person => {
     const section = createDiv('section', article, person);
     const color = randomColor();
     section.style.backgroundColor = color;
-    if (!bright(color)) {
-        section.style.color = '#fff';
-    }
 });
 
 const body = document.querySelector('body');
 const arrayBody = Array.from(body.children);
-
-arrayBody.sort(() => Math.random() - 0.5);
 
 arrayBody.forEach(div => {
     body.appendChild(div);
